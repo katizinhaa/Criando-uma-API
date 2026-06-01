@@ -32,7 +32,7 @@ class Pedido(BaseModel):
 async def get_db_connection():
     return await asyncpg.connect(
         user="postgres",
-        password="katielly12345",
+        password="668474541",
         database="floricultura",
         host="localhost"
     )
