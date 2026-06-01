@@ -5,9 +5,8 @@ import asyncpg
 app = FastAPI()
 
 
-# ==========================
-# MODELS
-# ==========================
+
+# models
 
 class Flor(BaseModel):
     nome: str
@@ -28,9 +27,7 @@ class Pedido(BaseModel):
     data_pedido: str
 
 
-# ==========================
-# CONEXÃO COM O BANCO
-# ==========================
+# conexão com o banco
 
 async def get_db_connection():
     return await asyncpg.connect(
@@ -41,9 +38,7 @@ async def get_db_connection():
     )
 
 
-# ==========================
-# CRUD FLORES
-# ==========================
+# crud flores
 
 @app.post("/flores")
 async def criar_flor(flor: Flor):
@@ -130,9 +125,7 @@ async def deletar_flor(id: int):
     return {"message": "Flor deletada com sucesso!"}
 
 
-# ==========================
-# CRUD CLIENTES
-# ==========================
+# crud clientes
 
 @app.post("/clientes")
 async def criar_cliente(cliente: Cliente):
@@ -221,9 +214,7 @@ async def deletar_cliente(id: int):
     return {"message": "Cliente deletado com sucesso!"}
 
 
-# ==========================
-# CRUD PEDIDOS
-# ==========================
+# crud pedidos 
 
 @app.post("/pedidos")
 async def criar_pedido(pedido: Pedido):
